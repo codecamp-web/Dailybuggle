@@ -19,17 +19,16 @@ import {ThemeContext} from "@/context/themeContext"
 const Navbar = () => {
     const pathname = usePathname()
 
-    const {isDarkMode, toggleTheme} = useContext(ThemeContext)
+    const {isDarkMode, toggleTheme}:any = useContext(ThemeContext)
 
   return (
-    <nav className={`${isDarkMode ? "bg-gray-900 text-white" : 
+    <nav className={`sticky top-0 z-50 ${isDarkMode ? "bg-gray-900 text-white" : 
       "bg-white text-gray-900" }
     py-4 bg-gray-100 text-gray-900 shadow-md transition-colors duration-300`}>
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6">
-        <div className="text-lg font-bold">
-            {/* Home */}
-        <a href="/">Daily Buggle</a>
-        </div>
+  <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6">
+    <div className="text-lg font-bold">
+      <a href="/">Daily Buggle</a>
+    </div>
     <div>
            {/* other navs */}
         <NavigationMenu className="hidden lg:flex">
@@ -96,7 +95,7 @@ const Navbar = () => {
    </div>
      <div className="hidden lg:flex items-center space-x-4">
         <div className="flex items-center" onClick={toggleTheme}>
-            <span className="mr-2">Dark Mode</span>
+            <span className="mr-2 ">Theme</span>
             <Switch />
         </div>
         <Button variant="default" className="px-6">Login</Button>
